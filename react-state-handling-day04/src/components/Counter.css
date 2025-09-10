@@ -1,0 +1,36 @@
+.counter {
+  text-align: center;
+}
+
+.btn-group {
+  display: flex;
+  gap: 12px; 
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.increase {
+  background-color: #28a745; 
+}
+
+.decrease {
+  background-color: #dc3545; 
+}
+
+.reset {
+  background-color: #007bff; 
+}
