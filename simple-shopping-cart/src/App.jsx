@@ -8,19 +8,18 @@ function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
-  // On mount: load products and any saved cart from localStorage
+  // load products
   useEffect(() => {
     setProducts(productsData.products || []);
     const saved = localStorage.getItem('cart');
     if (saved) setCart(JSON.parse(saved));
   }, []);
 
-  // Persist cart to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  // Add product to cart: if exists, increase quantity; else add new with quantity 1
+  // Add product to cart
   const addToCart = (product) => {
     setCart(prev => {
       const existing = prev.find(item => item.id === product.id);
@@ -38,7 +37,6 @@ function App() {
     setCart(prev => prev.filter(item => item.id !== id));
   };
 
-  // Total price
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
