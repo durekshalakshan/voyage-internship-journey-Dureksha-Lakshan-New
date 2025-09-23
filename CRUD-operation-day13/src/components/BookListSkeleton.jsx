@@ -1,4 +1,5 @@
-// src/components/BookListSkeleton.jsx
+import React from 'react';
+
 export default function BookListSkeleton() {
   return (
     <div className="p-4">

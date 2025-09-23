@@ -1,3 +1,5 @@
+import React from 'react'; 
+
 export default function Pagination({ total, perPage, current, onPageChange }) {
   const totalPages = Math.ceil(total / perPage);
   if (totalPages <= 1) return null;

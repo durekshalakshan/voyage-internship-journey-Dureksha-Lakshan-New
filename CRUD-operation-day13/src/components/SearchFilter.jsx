@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function SearchFilter({ search, setSearch }) {
   return (
     <div className="mb-6">
