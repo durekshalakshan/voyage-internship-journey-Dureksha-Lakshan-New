@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./backend
+    container_name: advanced-backend
+    ports:
+      - "5000:5000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/logs.json:/app/logs.json
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: advanced-frontend
+    ports:
+      - "3000:80"
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - backend
+    restart: unless-stopped
